@@ -1,0 +1,130 @@
+/*
+* Shane's Portfolio
+* 2017
+*
+* COLORS:
+* Light Blue: #00BBD6
+* Dark Blue: #0B56E3
+* Aqua: #0CEDCC
+* Black: #000
+* White: #fff
+* Grey: #eee
+*/
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+    color: #000;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+h1 {
+    color: #fff;
+    font-size: 3em;
+}
+
+a {
+    color: #0B56E3;
+}
+
+a:hover {
+    background: #0B56E3;
+    color: #fff;
+}
+
+footer {
+    background: #eee;
+    padding: 20px;
+}
+
+
+/* Nav Styles */
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul {
+    padding: 10px;
+    background: #fff;
+    font-size: 1.5em;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+header {
+    background: url("background.jpg") repeat center;
+    height: 300px;
+    padding: 20px;
+}
+
+#SPPic {
+    float: left;
+    border: 10px dotted #000;
+    position: relative;
+    margin-right: 20px;
+}
+
+main {
+    width: 70%;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px 0;
+}
+
+
+/* Form Styles */
+
+#userInfoForm label {
+    display: inline-block;
+    width: 150px;
+}
+
+#userInfoForm input,
+#userInfoForm select {
+    margin: 10px 0;
+    display: inline-block;
+}
+
+#userInfoForm {
+    background: #eee;
+    padding: 20px;
+}
+
+#myFirstButton {
+    background: #0B56E3;
+    color: #fff;
+    padding: 10px 10px 5px 10px;
+    font-family: fantasy;
+}
+
+
+/* Slider Styles */
+
+.slider {
+    max-width: 640px;
+    margin: 100px auto;
+}
+
+.slick-slide img {
+    width: 100%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: black;
+}

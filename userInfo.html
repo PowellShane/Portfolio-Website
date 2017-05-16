@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<!-- Head Section -->
+
+<head>
+    <title>User Info</title>
+    <link rel="stylesheet" href="projects.css">
+    <script type="text/javascript">
+        function checkNames() { //main
+            alert("check names");
+            //Input
+            var returnedFormItems = readData();
+            //process
+            validateFirstName(returnedFormItems[0]);
+            validateLastName(returnedFormItems[1]);
+            if(validateAge(returnedFormItems[2])){
+                validateBooze(returnedFormItems[3]);
+                //Output
+                displayOutput();
+                showInfo(returnedFormItems);
+            } else {
+                alert("Goodbye");
+            }
+            
+        }
+
+        function readData() {
+            alert("Start");
+            //Create Array to reurn the form data
+            var formItems = new Array();
+            //Read data from form
+            var fName = document.getElementById("fName").value;
+            var lName = document.getElementById("lName").value;
+            var age = document.getElementById("age").value;
+            var booze = document.getElementById("booze").value; 
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            
+            formItems[0] = fName;
+            formItems[1] = lName;
+            formItems[2] = age;
+            formItems[3] = booze;
+            formItems[4] = email;
+            formItems[5] = phone;
+            
+            alert("Form items: " + formItems);
+            
+            //Return Data
+            return formItems;
+        }
+
+        function validateFirstName(fName) {
+            if (fName.length > 1) {
+                alert("First OK");
+            }
+            else {
+                alert("Add more charactors");
+            }
+        }
+
+        function validateLastName(lName) {
+            if (lName.length > 1) {
+                alert("Last OK");
+            }
+            else {
+                alert("Add more charactors");
+            }
+        }
+        function validateAge(age) {
+            var isOfAge = false;
+            if (age != "<21") {
+                isOfAge = true;
+            }
+            return isOfAge;
+        }
+        function validateBooze(booze) {
+            if (booze == "white" || booze == "red") {
+                alert("Bon Jour");
+            }
+            else {
+                alert("The hard stuff");
+            } 
+            
+            
+        }
+
+        function displayOutput() {}
+
+        function showInfo(returnedFormItems) {
+            // Retrive and Display first name
+            var formfName = returnedFormItems[0];
+            alert("formfName: " + formfName);
+            // Retrive and Display last name
+            var formlName = returnedFormItems[1];
+            alert("formlName: " + formlName);
+            // Retrieve and Display email
+            var formEmail = returnedFormItems[4]; 
+            alert("formEmail: " + formEmail);
+            // Retrieve and Display Phone
+            var formPhone = returnedFormItems[5]; 
+            alert("formPhone: " + formPhone);
+            // Retrieve and Display age
+            var formAge = returnedFormItems[2];
+            alert("formAge: " + formAge);
+            // Retrieve and Display Booze
+            var formBooze = returnedFormItems[3];
+            alert("formBooze: " + formBooze);
+        } 
+    </script>
+    <style>
+        form {
+            text-decoration-color: aquamarine;
+        }
+    </style>
+</head>
+<!-- Body Section -->
+
+<body>
+    <header>
+        <h1>User Info</h1> 
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="personalInterests.html">Interests</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="userInfo.html">User Info</a></li>
+            </ul>
+        </nav> 
+    </header>
+    <main>
+        <form id="userInfoForm">
+            <!-- First Name -->
+            <label for="fName">First Name:</label>
+            <input id="fName" type="text" placeholder="eg John" />
+            <br />
+            <!-- Last Name -->
+            <label for="lName">Last Name:</label>
+            <input id="lName" type="text" placeholder="eg Smith" />
+            <br />
+            <!-- Email -->
+            <label for="email">Email:</label>
+            <input id="email" type="email" required placeholder="eg johnsmith@gmail" />
+            <br />
+            <!-- Phone -->
+            <label for="phone">Phone:</label>
+            <input id="phone" type="tel" placeholder="eg 1800 123456" />
+            <br />
+            <!-- Select -->
+            <!-- Age Dropdown -->
+            <label for="age">Age:</label>
+            <select id="age">
+                <option value="<21">&lt; 21</option>
+                <option value="21">21</option>
+                <option value=">21">&gt; 21</option>
+            </select>
+            <br />
+            <!-- Select -->
+            <!-- Booze Dropdown -->
+            <label for="booze">Fav Drink:</label>
+            <select id="booze">
+                <optgroup label="wine">
+                    <option value="white">White</option>
+                    <option value="red">Red</option>
+                </optgroup>
+                <optgroup label="spirits">
+                    <option value="vodka">Vodka</option>
+                    <option value="bourban">Bourban</option>
+                </optgroup>
+            </select>
+            <br />
+            <br />
+            <!-- Button -->
+            <button id="myFirstButton" type="submit"  onclick="checkNames();" >Click here!</button>
+        </form>
+    </main>
+    <footer>User Info</footer>
+</body>
+
+</html>
